@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css"/>
+    <title>TransQuiz</title>
+</head>
+<body>
+
+    <div id="inicio">
+        <label>Digite seu nome:</label>
+        <input type="text"/>
+        <button>Jogar!</button>
+    </div>
+
+    <div id="game">
+        <div id="quiz" class="board">
+            <div class=" hide" >
+                <span id="pergunta"></span>
+                <button class = "o1"></button>
+                <button class = "o2"></button>
+                <button class = "o3"></button>
+                <button class = "o3"></button>
+                <button class = "o3"></button>
+                <p class = "texto"></p>
+            </div>
+        </div>
+
+        <div id="score" class = "hide">
+            <p>Olá, <span id="name"></span>! Você tem <span id="points"></span> pontos!</p>
+        <button>Continue</button>
+        </div>
+
+    </div>
+
+    <script src="./js/Transquiz.js"></script>
+    <script src="./js/index.js"></script>
+
+</body>
+</html>
