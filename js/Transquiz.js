@@ -54,17 +54,24 @@ class Transquiz {
     }
 
     getQuestion() {
+        if (this.rodada === this.questions.length) {
+            return
+        }
         this.questionSelected = this.questions[this.rodada]
+        
     }
 
     nextQuestion() {
+        if (this.rodada === this.questions.length) {
+            return
+        }
         this.rodada++
         this.getQuestion()
     }
 
-    checkAnswer() {
-        this.questionSelected.forEach(() => {
-            if(this.resposta === this.questionSelected) {
+    checkAnswer(btn) {
+        console.log(btn)
+            if(btn.innerText === this.questionSelected.Resposta) {
                 console.log("Arrasou! Continue assim ;)")
 
                 this.checkStatus()
@@ -75,7 +82,6 @@ class Transquiz {
 
                 this.checkStatus()
             }
-        })
 
     }
 
@@ -84,6 +90,19 @@ class Transquiz {
 
         if (this.points === 0) {
             console.log("Você perdeu o jogo!")
+        }
+
+        if (this.rodada === this.questions.length) {
+            checkAnswer()
+            if (this.points <= 20) {
+                console.log("A coisa tá feia!")
+            }
+            if (this.points >= 30 || this.points <= 60) {
+                console.log("Você foi ok. Estude um pouco mais!")
+            }
+            if (this.points === 70) {
+                console.log("CARACA!!! ARRASOU!!! ~vomitando arco-iris")
+            }
         }
     }
 }

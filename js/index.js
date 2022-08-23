@@ -56,17 +56,32 @@ btnContinue.addEventListener("click", () => {
 
 o1.addEventListener("click", () => {
     texto.innerText = game.questionSelected.Op1
-    this.checkAnswer()
+    game.checkAnswer(o1)
+    points.innerText = game.points
 })
 
 o2.addEventListener("click", () => {
     texto.innerText = game.questionSelected.Op2
-    this.checkAnswer()
+    game.checkAnswer(o2)
+    points.innerText = game.points
 })
 
 o3.addEventListener("click", () => {
     texto.innerText = game.questionSelected.Op3
-    this.checkAnswer()
+    game.checkAnswer(o3)
+    points.innerText = game.points
+})
+
+o4.addEventListener("click", () => {
+    texto.innerText = game.questionSelected.Op4
+    game.checkAnswer(o4)
+    points.innerText = game.points
+})
+
+o5.addEventListener("click", () => {
+    texto.innerText = game.questionSelected.Op5
+    game.checkAnswer(o5)
+    points.innerText = game.points
 })
 
 /* btnContinue.addEventListener("click", () => {
