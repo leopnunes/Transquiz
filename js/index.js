@@ -16,6 +16,10 @@ const o4 = document.querySelector("#quiz .o4")
 const o5 = document.querySelector("#quiz .o5")
 const btnContinue = document.querySelector("#score button")
 const texto = document.querySelector("#quiz .texto")
+const points20 = document.querySelector("#points20")
+const points60 = document.querySelector("#points60")
+const points80 = document.querySelector("#points80")
+const win = document.querySelector("#win")
 
 
 btnPlay.addEventListener("click", () => {
@@ -24,6 +28,9 @@ btnPlay.addEventListener("click", () => {
     }
 
     inicio.style.display = "none"
+    o3.classList.add("hide")
+    o4.classList.add("hide")
+    o5.classList.add("hide")
     score.classList.remove("hide")
     perguntaBox.classList.remove("hide")
     perguntaBox.classList.add("questions")
@@ -40,8 +47,7 @@ btnPlay.addEventListener("click", () => {
     pergunta.innerText = game.questionSelected.Pergunta
     o1.innerText = game.questionSelected.Op1
     o2.innerText = game.questionSelected.Op2
-    o3.innerText = game.questionSelected.Op3
-
+    btnContinue.style.display = "none"
 })
 
 btnContinue.addEventListener("click", () => {
@@ -50,7 +56,27 @@ btnContinue.addEventListener("click", () => {
     game.nextQuestion()
     console.log(game.questionSelected)
 
+    //trocando as perguntas no html - perguntas com duas questoes
     pergunta.innerText = game.questionSelected.Pergunta
+    o1.innerText = game.questionSelected.Op1
+    o2.innerText = game.questionSelected.Op2
+
+    //se estiver na rodada acima de 6, renderizar desse jeito
+    if (game.rodada > 5) {
+        console.log("renderizar outras opçoes")
+        //mostrar o restante dos botoes
+        //adicionar o innerText com o restante das alternativas
+        o3.classList.remove("hide")
+        o4.classList.remove("hide")
+        o5.classList.remove("hide")
+        o3.innerText = game.questionSelected.Op3
+        o4.innerText = game.questionSelected.Op4
+        o5.innerText = game.questionSelected.Op5
+
+    }
+
+    btnContinue.style.display = "none"
+
 
 })
 
@@ -58,61 +84,38 @@ o1.addEventListener("click", () => {
     texto.innerText = game.questionSelected.Op1
     game.checkAnswer(o1)
     points.innerText = game.points
+    btnContinue.style.display = "block"
+
 })
 
 o2.addEventListener("click", () => {
     texto.innerText = game.questionSelected.Op2
     game.checkAnswer(o2)
     points.innerText = game.points
+    btnContinue.style.display = "block"
+
 })
 
 o3.addEventListener("click", () => {
     texto.innerText = game.questionSelected.Op3
     game.checkAnswer(o3)
     points.innerText = game.points
+    btnContinue.style.display = "block"
+
 })
 
 o4.addEventListener("click", () => {
     texto.innerText = game.questionSelected.Op4
     game.checkAnswer(o4)
     points.innerText = game.points
+    btnContinue.style.display = "block"
+
 })
 
 o5.addEventListener("click", () => {
     texto.innerText = game.questionSelected.Op5
     game.checkAnswer(o5)
     points.innerText = game.points
+    btnContinue.style.display = "block"
+
 })
-
-/* btnContinue.addEventListener("click", () => {
-    pergunta2.classList.add("hide")
-    pergunta3.classList.remove("hide")
-}) */
-
-
-/* const perg1 = {
-    pergunta: "Essa é a pergunta 1?",
-    op1: "Essa é a opção1",
-    op2: "Essa é a opção2",
-    op3: "Essa é a opção3",
-    resp: "Essa é a resposta 1."
-}
-
-const perg2 = {
-    pergunta: "Essa é a pergunta 2?",
-    op1: "Essa é a opção1",
-    op2: "Essa é a opção2",
-    op3: "Essa é a opção3",
-    resp: "Essa é a resposta 2."
-}
-
-const perg3 = {
-    pergunta: "Essa é a pergunta 2?",
-    op1: "Essa é a opção1",
-    op2: "Essa é a opção2",
-    op3: "Essa é a opção3",
-    resp: "Essa é a resposta 2."
-}
-
-let perguntas = [{perg1, perg2, perg3}]
- */

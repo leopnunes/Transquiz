@@ -12,12 +12,12 @@
     <div id="inicio">
         <label>Digite seu nome:</label>
         <input type="text"/>
-        <button>Jogar!</button>
+        <button class="button-85" role="button">Jogar!</button>
     </div>
 
     <div id="game">
         <div id="quiz" class="board">
-            <div class=" hide" >
+            <div class="hide" >
                 <span id="pergunta"></span>
                 <button class = "o1"></button>
                 <button class = "o2"></button>
@@ -28,9 +28,26 @@
             </div>
         </div>
 
-        <div id="score" class = "hide">
+        <div id="score" class="hide">
             <p>Olá, <span id="name"></span>! Você tem <span id="points"></span> pontos!</p>
-        <button>Continue</button>
+            <button class="button-85" role="button">Continue</button>
+        </div>
+
+        <div id="win" class="hide">
+            <div id="points20" class="hide">
+                <p>ERôÔÔÔôôôU!</p>
+            </div>
+            <div id="points60" class="hide">
+                <p>MARROMENO</p>
+            </div>
+            <div id="points80" class="hide">
+                <p>VOCÊ ARRASOUUUUUU!</p>
+            </div>
+
+        </div>
+
+        <div id="lost" class="hide">
+
         </div>
 
     </div>
