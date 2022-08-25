@@ -9,6 +9,12 @@
     align-items: center;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #inicio {
     display: flex;
     flex-direction: column;
@@ -16,6 +22,11 @@
     align-items: center;
     gap: 14px;
     margin-top: 30px;
+    background-image: url('/assets/background/paginicial.png');
+    width: 100%;
+    height: 410px;
+    background-size: cover;
+    
 }
 
 .board {
@@ -36,7 +47,7 @@ label {
 }
 
 body {
-    background-color: rgb(252, 243, 217);
+    background-color: white;
 }
 
 button {
