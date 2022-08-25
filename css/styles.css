@@ -93,9 +93,9 @@ button {
     margin-top: 30px;
 }
 
-#quiz > div {
+/* #quiz > div {
     
-}
+} */
 
 button {
     font-family: 'DM Sans', sans-serif;
@@ -115,11 +115,11 @@ div#score {
 }
 
 #lose.youLose {
-    background-image: url(/assets/sad/sad-cat-8.gif);
+    background-image: url('/assets/sad/sad-cat-8.gif');
 }
 
 #points20 div {
-    background-image: url(/assets/sad/sad-cat-8.gif);
+    background-image: url('/assets/sad/sad-cat-8.gif');
 }
 
 /* CSS */
