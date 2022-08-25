@@ -138,7 +138,7 @@ class Transquiz {
         const points80 = document.querySelector("#points80")
         const lose = document.querySelector("#lose")
         const btnContinue = document.querySelector("#score button")
-        const score = document.querySelector()
+        /* const score = document.querySelector("#score") */
         
         if (this.points === 0) {
             console.log("Você perdeu o jogo!")
