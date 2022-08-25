@@ -18,8 +18,8 @@ class Transquiz {
             Op2: "Não",
             Resposta1: "Sim",
             Resposta2: "Não",
-            TextoUsuario1: "Legal! Um passo já foi dado.",
-            TextoUsuario2: "Pessoas transgêneras são pessoas que não se identificam com o gênero de registro (nascimento). Isso engloba um escopo maior, pessoas trans podem ser trans binárias (masculino/feminino) ou trans não-binárias (gênero fluido, agênero e mais). Importante: o gênero com que você se identifica NÃO possui ligação com sua sexualidade (pessoa por quem você se atrai)."
+            TextoUsuario1: "Legal! Um passo já foi dado. Lembre também que identidade de gênero (como você se identifica) e sexualidade (por quem você se atrai) não possuem ligação!",
+            TextoUsuario2: "Pessoas transgêneras são pessoas que não se identificam com o gênero de registro (nascimento). Pessoas trans podem ser trans binárias (masculino/feminino) ou trans não-binárias (gênero fluido, agênero e mais). Importante: o gênero com que você se identifica NÃO possui ligação com sua sexualidade (pessoa por quem você se atrai)."
             },
             {
             Pergunta: "Você contrataria uma pessoa trans para trabalhar na sua empresa?",
@@ -27,8 +27,8 @@ class Transquiz {
             Op2: "Não",
             Resposta1: "Sim",
             Resposta2: "Não",
-            TextoUsuario1: "Boa! Você faz parte de uma pequena porcentagem. X% de empresas não empregam pessoas trans.",
-            TextoUsuario2: "Infelizmente não são poucas pessoas que pensam igual você. A taxa de desemprego de pessoas trans no Brasil é de x%, sendo que cerca de 90% da população trans recorre à prostituição para conseguir se manter."
+            TextoUsuario1: "Boa! Você faz a diferença. Aproximadamente 38% de empresas tem restrições para a contratação de pessoas LGBTQIA+. Mas não basta apenas contratar, é necessário também o reconhecimento do(a) profissional!",
+            TextoUsuario2: "Infelizmente não são poucas as pessoas que pensam igual você. A taxa de desemprego de pessoas trans no Brasil é de 29,8%, porém 56,82% estão em situação de insegurança alimentar e cerca de 90% das mulheres trans e travestis recorrem à prostituição para conseguirem se manter."
             },
             {
             Pergunta: "Possui alguma pessoa trans no seu círculo social?",
@@ -40,13 +40,13 @@ class Transquiz {
             TextoUsuario2: "Te convido a pensar o motivo disso. Você não conhece ou nunca deu abertura à uma pessoa trans?"
             },
             {
-            Pergunta: "Aceitaria um filho trans na sua casa?",
+            Pergunta: "Aceitaria um filho trans dentro da sua casa?",
             Op1: "Sim",
             Op2: "Não",
             Resposta1: "Sim",
             Resposta2: "Não",
-            TextoUsuario1: "Certo",
-            TextoUsuario2: "Errado"
+            TextoUsuario1: "A maior demonstração de amor que você pode dar à alguém é aceitá-los(as) como eles(as) são. <3",
+            TextoUsuario2: "Das pessoas trans expulsas de casa, 29% tinham 15 anos ou menos e 49% tinham entre 16-20 anos. Em 2019, 35,5% das mortes violentas de LGBTQIA+ aconteceram dentro de suas próprias casas. Não faça parte dessa porcentagem e não deixe sua criança passar por isso."
             },
             {
             Pergunta: "Sabia que existem homens que engravidam?",
@@ -54,8 +54,8 @@ class Transquiz {
             Op2: "Não",
             Resposta1: "Sim",
             Resposta2: "Não",
-            TextoUsuario1: "Certo",
-            TextoUsuario2: "Errado"
+            TextoUsuario1: "Parabéns! Poucas pessoas tem a ciência disso.",
+            TextoUsuario2: "Homens trans que possuem útero podem gerar uma criança, porém é necessário a interrupção do tratamento hormonal (testosterona). Podem até amamentar, caso não tenham passado por uma cirurgia de retirada das mamas (mastectomia). Mulheres trans também podem amamentar, caso utilizem hormônios!"
             },
             {
             Pergunta: "Qual o maior medo de pessoas trans no Brasil?",
@@ -65,9 +65,9 @@ class Transquiz {
             Op4: "Não conseguir um emprego",
             Op5: "Todas as opções acima",
             Resposta1: "Todas as opções acima",
-            Resposta2: ["Ir em médicos", "Ser assassinado", "Utilizar o banheiro", "Não conseguir um emprego"],
-            TextoUsuario1: "Certo",
-            TextoUsuario2: "Errado"
+            Resposta2: "Ir em médicos" || "Ser assassinado" || "Utilizar o banheiro" || "Não conseguir um emprego",
+            TextoUsuario1: "Acertou. Que bom que você tem a consciência disso!",
+            TextoUsuario2: "Ser trans no Brasil envolve muitos medos. Parece até piada dizer que uma coisa simples como ir ao banheiro é motivo para sentir medo, porém é a verdade. É onde ficamos vulneráveis para "
             },
             {
             Pergunta: "Qual a expectativa de vida de uma pessoa trans?",
@@ -77,7 +77,7 @@ class Transquiz {
             Op4: "21 anos",
             Op5: "16 anos",
             Resposta1: "35 anos",
-            Resposta2: !("35 anos"),
+            Resposta2: "86 anos" || "68 anos" || "21 anos" || "16 anos",
             TextoUsuario1: "Você acertou. A expectativa de vida é assustadoramente baixa, não é? Vamos mudar isso juntos?",
             TextoUsuario2: "Infelizmente a expectativa de vida de uma pessoa trans é de 35 anos. Isso devido à assassinatos, ou suicídio. Que tal mudarmos isso juntos? Espalhe informação."
             }
@@ -130,16 +130,16 @@ class Transquiz {
         const points60 = document.querySelector("#points60")
         const points80 = document.querySelector("#points80")
         const win = document.querySelector("#win")
+        const lose = document.querySelector("#lose")
         
         if (this.points === 0) {
             console.log("Você perdeu o jogo!")
             quiz.classList.add("hide")
-            let div = document.createElement("div")
-            div.innerHTML =
-            `Você <strong>perdeu</strong>. Pesquise mais!`
+            lose.classList.remove("hide")
         }
 
-        if (this.rodada === this.questions.length) {
+
+        if (this.rodada === this.questions.length-1) {
             if (this.points <= 20) {
                 console.log("A coisa tá feia!")
                 quiz.classList.add("hide")

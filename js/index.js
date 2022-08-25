@@ -20,6 +20,8 @@ const points20 = document.querySelector("#points20")
 const points60 = document.querySelector("#points60")
 const points80 = document.querySelector("#points80")
 const win = document.querySelector("#win")
+const lose = document.querySelector("#lose")
+const divGame = document.querySelector("#game")
 
 
 btnPlay.addEventListener("click", () => {
