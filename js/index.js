@@ -21,7 +21,7 @@ const points60 = document.querySelector("#points60")
 const points80 = document.querySelector("#points80")
 const win = document.querySelector("#win")
 const lose = document.querySelector("#lose")
-const divGame = document.querySelector("#game")
+const divGame = document.querySelector("#divGame")
 
 
 btnPlay.addEventListener("click", () => {
@@ -34,7 +34,9 @@ btnPlay.addEventListener("click", () => {
     o4.classList.add("hide")
     o5.classList.add("hide")
     score.classList.remove("hide")
+    score.style.display = "flex"
     perguntaBox.classList.remove("hide")
+    quiz.style.display = "flex"
     perguntaBox.classList.add("questions")
 
     game.userName = nameInput.value

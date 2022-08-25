@@ -67,7 +67,7 @@ class Transquiz {
             Resposta1: "Todas as opções acima",
             Resposta2: "Ir em médicos" || "Ser assassinado" || "Utilizar o banheiro" || "Não conseguir um emprego",
             TextoUsuario1: "Acertou. Que bom que você tem a consciência disso!",
-            TextoUsuario2: "Ser trans no Brasil envolve muitos medos. Parece até piada dizer que uma coisa simples como ir ao banheiro é motivo para sentir medo, porém é a verdade. É onde ficamos vulneráveis para "
+            TextoUsuario2: "Ser trans no Brasil envolve muitos medos. Parece até piada dizer que uma coisa simples como ir ao banheiro é motivo para sentir medo, porém é a verdade. É onde podemos sofrer agressão caso uma pessoa errada entre."
             },
             {
             Pergunta: "Qual a expectativa de vida de uma pessoa trans?",
@@ -112,50 +112,61 @@ class Transquiz {
                 texto.innerText = this.questionSelected.TextoUsuario1
 
                 this.checkStatus()
-            } 
-            if(btn.innerText === this.questionSelected.Resposta2) {
-                console.log("Errou. Veja o por que:")
+            } else {
+                console.log('nao é a certa, entao é a errada')
                 texto.innerText = this.questionSelected.TextoUsuario2
                 this.points -= 10
 
                 this.checkStatus()
             }
+            /* if(btn.innerText === this.questionSelected.Resposta2) {
+                console.log("Errou. Veja o por que:")
+                texto.innerText = this.questionSelected.TextoUsuario2
+                this.points -= 10
+
+                this.checkStatus()
+            } */
 
     }
 
     checkStatus() {
         console.log("checando os status")
         const quiz = document.querySelector("#quiz")
+        const win = document.querySelector("#win")
         const points20 = document.querySelector("#points20")
         const points60 = document.querySelector("#points60")
         const points80 = document.querySelector("#points80")
-        const win = document.querySelector("#win")
         const lose = document.querySelector("#lose")
+        const btnContinue = document.querySelector("#score button")
+        const score = document.querySelector()
         
         if (this.points === 0) {
             console.log("Você perdeu o jogo!")
-            quiz.classList.add("hide")
-            lose.classList.remove("hide")
+            quiz.style.display = 'none'
+            lose.style.display = 'flex'
         }
 
 
         if (this.rodada === this.questions.length-1) {
             if (this.points <= 20) {
                 console.log("A coisa tá feia!")
-                quiz.classList.add("hide")
-                win.classList.remove("hide")
+                quiz.style.display = 'none'
+                win.style.display = 'flex'
+                btnContinue.style.display = 'none'
                 points20.classList.remove("hide")
             }
             if (this.points >= 30 && this.points <= 60) {
                 console.log("Você foi ok. Estude um pouco mais!")
-                quiz.classList.add("hide")
-                win.classList.remove("hide")
+                quiz.style.display = 'none'
+                win.style.display = 'flex'
+                btnContinue.style.display = 'none'
                 points60.classList.remove("hide")
             }
             if (this.points >= 70) {
                 console.log("CARACA!!! ARRASOU!!! ~vomitando arco-iris")
-                quiz.classList.add("hide")
-                win.classList.remove("hide")
+                quiz.style.display = 'none'
+                win.style.display = 'flex'
+                btnContinue.style.display = 'none'
                 points80.classList.remove("hide")
             }
         }

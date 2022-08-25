@@ -9,12 +9,22 @@
     align-items: center;
 }
 
+#inicio {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    align-items: center;
+    gap: 14px;
+    margin-top: 30px;
+}
+
 .board {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    width: 70%;
 }
 
 .texto {
@@ -27,12 +37,6 @@ label {
 
 body {
     background-color: rgb(252, 243, 217);
-}
-
-div.hide {
-    background-color: rgb(21, 115, 146);
-    border-radius: 10px;
-    border-bottom: 30px;
 }
 
 button {
@@ -55,21 +59,26 @@ button {
 
 .o1 {
     margin-bottom: 8px;
+    padding: 4px;
 }
 
 .o2 {
+    padding: 4px;
     margin-bottom: 8px;
 }
 
 .o3 {
+    padding: 4px;
     margin-bottom: 8px;
 }
 
 .o4 {
+    padding: 4px;
     margin-bottom: 8px;
 }
 
 .o5 {
+    padding: 4px;
     margin-bottom: 8px;
 }
 
@@ -80,14 +89,16 @@ button {
 
 #quiz {
     font-family: 'DM Sans', sans-serif;
+    /* display: flex; */
+    margin-top: 30px;
+}
+
+#quiz > div {
+    
 }
 
 button {
     font-family: 'DM Sans', sans-serif;
-}
-
-div.questions {
-    display: flex;
 }
 
 span#pergunta {
@@ -97,6 +108,7 @@ span#pergunta {
 div#score {
     width: 80%;
     font-family: 'DM Sans', sans-serif;
+    text-align: center;
     flex-direction: column;
     align-items: center;
     align-content: space-around;
